@@ -1,6 +1,6 @@
 {
-  "name": "is",
-  "repository": "git://github.com/ianstormtaylor/is.git",
+  "name": "@weo-edu/is",
+  "repository": "git://github.com/weo-edu/is.git",
   "license": "MIT",
   "version": "0.1.1",
   "description": "Simple type checking.",
@@ -11,5 +11,9 @@
   "dependencies": {
     "component-type": "1.0.0",
     "is-empty": "0.0.1"
+  },
+  "devDependencies": {
+    "mocha": "^2.2.5",
+    "standard": "^4.0.0"
   }
 }

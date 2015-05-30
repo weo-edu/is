@@ -1,12 +1,9 @@
+/**
+ * Modules
+ */
 
-var isEmpty = require('is-empty');
-
-try {
-  var typeOf = require('type');
-} catch (e) {
-  var typeOf = require('component-type');
-}
-
+var isEmpty = require('is-empty')
+var typeOf = require('component-type')
 
 /**
  * Types.
@@ -17,7 +14,6 @@ var types = [
   'array',
   'boolean',
   'date',
-  'element',
   'function',
   'null',
   'number',
@@ -25,8 +21,13 @@ var types = [
   'regexp',
   'string',
   'undefined'
-];
+]
 
+/**
+ * Exports alias
+ */
+
+var is = exports
 
 /**
  * Expose type checkers.
@@ -35,31 +36,29 @@ var types = [
  * @return {Boolean}
  */
 
-for (var i = 0, type; type = types[i]; i++) exports[type] = generate(type);
-
+types.forEach(function (type) {
+  exports[type] = generate(type)
+})
 
 /**
  * Add alias for `function` for old browsers.
  */
 
-exports.fn = exports['function'];
-
+exports.fn = exports['function']
 
 /**
  * Expose `empty` check.
  */
 
-exports.empty = isEmpty;
-
+exports.empty = isEmpty
 
 /**
  * Expose `nan` check.
  */
 
 exports.nan = function (val) {
-  return exports.number(val) && val != val;
-};
-
+  return is.number(val) && val !== val // eslint-disable-line
+}
 
 /**
  * Generate a type checker.
@@ -70,6 +69,6 @@ exports.nan = function (val) {
 
 function generate (type) {
   return function (value) {
-    return type === typeOf(value);
-  };
+    return type === typeOf(value)
+  }
 }

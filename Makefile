@@ -1,18 +1,19 @@
+#
+# Vars
+#
 
-build: node_modules components index.js
-	@component build --dev
+NODE_BIN = ./node_modules/.bin
 
-clean:
-	@rm -fr build components node_modules
+#
+# Tasks
+# 
 
-components: component.json
-	@component install --dev
+validate:
+	@${NODE_BIN}/standard index.js
 
-node_modules: package.json
-	@npm install
-	@touch node_modules
+test:
+	@${NODE_BIN}/mocha
 
-test: build
-	@open test/index.html
+ci: validate test
 
-.PHONY: clean test
+.PHONY: test validate ci
