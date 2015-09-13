@@ -1,6 +1,8 @@
 var assert = require('assert')
 var is = require('..')
 var isEmpty = require('is-empty')
+var isPromise = require('is-promise')
+var isGenerator = require('is-generator')
 
 var types = {
   arguments: arguments,
@@ -26,10 +28,6 @@ describe('is', function () {
     })
   }
 
-  it('.fn', function () {
-    assert(is.fn === is.function)
-  })
-
   it('.empty', function () {
     assert(is.empty === isEmpty)
   })
@@ -39,6 +37,18 @@ describe('is', function () {
     assert(!is.nan(null))
     assert(!is.nan(undefined))
     assert(is.nan(NaN))
+  })
+
+  it('.promise', function () {
+    assert(is.promise === isPromise)
+  })
+
+  it('.generator', function () {
+    assert(is.generator === isGenerator)
+  })
+
+  it('.generatorFunction', function () {
+    assert(is.generatorFunction === isGenerator.fn)
   })
 
 })

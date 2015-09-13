@@ -3,6 +3,8 @@
  */
 
 var isEmpty = require('is-empty')
+var isPromise = require('is-promise')
+var isGenerator = require('is-generator')
 var typeOf = require('component-type')
 
 /**
@@ -41,12 +43,6 @@ types.forEach(function (type) {
 })
 
 /**
- * Add alias for `function` for old browsers.
- */
-
-exports.fn = exports['function']
-
-/**
  * Expose `empty` check.
  */
 
@@ -59,6 +55,24 @@ exports.empty = isEmpty
 exports.nan = function (val) {
   return is.number(val) && val !== val // eslint-disable-line
 }
+
+/**
+ * Expose `promise` check.
+ */
+
+exports.promise = isPromise
+
+/**
+ * Expose `generator` check.
+ */
+
+exports.generator = isGenerator
+
+/**
+ * Expose `generator function` check.
+ */
+
+exports.generatorFunction = isGenerator.fn
 
 /**
  * Generate a type checker.

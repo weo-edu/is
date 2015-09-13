@@ -10,7 +10,9 @@
   ],
   "dependencies": {
     "component-type": "1.0.0",
-    "is-empty": "0.0.1"
+    "is-empty": "0.0.1",
+    "is-generator": "^1.0.2",
+    "is-promise": "^2.1.0"
   },
   "devDependencies": {
     "mocha": "^2.2.5",

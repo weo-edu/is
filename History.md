@@ -1,3 +1,7 @@
+0.2.0 - September 13, 2015
+--------------------------
+* add es6 support
+* remove old browser support
 
 0.1.1 - February 10, 2013
 -------------------------
