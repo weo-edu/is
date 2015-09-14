@@ -1,5 +1,7 @@
 # is
 
+[![Codeship Status for weo-edu/is](https://img.shields.io/codeship/62675d20-3ca1-0133-7a61-3ebbb4d77cd4/master.svg)](https://codeship.com/projects/102301) [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](https://github.com/feross/standard)
+
   Simple type checking.
 
 ## Installation
